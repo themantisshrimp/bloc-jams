@@ -31,7 +31,7 @@ body.landing {
     background-size: cover; 
 }
 
-.hero-content . hero-title {
+.hero-content .hero-title {
     position: absolute; /* positioning will be explained in a resource */ 
     top: 40%; /* positioning will be explained in a resource */ 
     -webkit-transform: translateY(-50%);
