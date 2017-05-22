@@ -25,9 +25,9 @@
     
     window.onload = function() { 
         // Automatically animate the points on a tall screen where scrolling can't trigger the animation (the if statement below is for connection to utilities.js)
-            //if (window.innerHeight > 950) { 
-              //  animatePoints(pointsArray); 
-            //}
+            if (window.innerHeight > 950) { 
+                animatePoints(pointsArray); 
+            }
         //These variables are connected to the if statement **(document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance)->
         var sellingPoints = document.getElementsByClassName('selling-points')[0];
         var scrollDistance = sellingPoints.getBoundingClientRect().top - window.innerHeight + 200; 
