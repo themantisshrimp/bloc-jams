@@ -31,6 +31,21 @@ var albumMarconi = {
     ]
 }; 
 
+var albumHero = {
+    title: 'Prometheus', 
+    artist: 'Quake of the Universe', 
+    label: 'Titan', 
+    year: '2900 B.C.', 
+    albumArtUrl: 'assets/images/album_covers/07.png', 
+    songs: [
+        { title: 'The beginning', duration: '00:01'}, 
+        { title: 'Birth', duration: '5:05'}, 
+        { title: 'Battle', duration: '66:06'}, 
+        { title: 'Aftermath', duration: '20:05'}, 
+        { title: 'Re-Birth', duration: '00:30'}
+    ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -43,13 +58,15 @@ var createSongRow = function(songNumber, songName, songLength) {
      return template;
  };
 
-var setCurrentAlbum = function(album) {
-    //#1
+ //#1
     var albumTitle = document.getElementsByClassName('album-view-title')[0];
     var albumArtist = document.getElementsByClassName('album-view-artist')[0]; 
     var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0]; 
     var albumImage = document.getElementsByClassName('album-cover-art')[0]; 
     var albumSongList = document.getElementsByClassName('album-view-song-list')[0]; 
+
+var setCurrentAlbum = function(album) {
+   
     // #2
      albumTitle.firstChild.nodeValue = album.title;
      albumArtist.firstChild.nodeValue = album.artist;
@@ -67,5 +84,16 @@ var setCurrentAlbum = function(album) {
  
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
- };
+     
+     var albums = [albumPicasso, albumMarconi, albumHero]; 
+     var index = 1; 
+     
+     albumImage.addEventListener('click', function(Event) {
+         setCurrentAlbum(albums[index]);
+         index++; 
+            if (index == albums.length){
+                index=0; 
+            }
+     }); 
+     
 }
