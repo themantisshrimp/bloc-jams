@@ -115,5 +115,4 @@ var playButtonTemplate = '<a class ="album-song-button"><span class="ion-play></
                 index=0; 
             }
      }); 
-     
 }
