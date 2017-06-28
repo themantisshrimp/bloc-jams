@@ -110,11 +110,11 @@ var getSongItem = function (element) {
                             }
 };
 
+
 var clickHandler = function(targetElement) {
 
     var songItem = getSongItem(targetElement); 
     var dSongNumber = parseInt(songItem.getAttribute('data-song-number'));
-    console.log(currentlyPlayingSong, dSongNumber);
     
     if (currentlyPlayingSong === null) {
         songItem.innerHTML = pauseButtonTemplate; 
@@ -142,10 +142,10 @@ var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause">
 // Store state of playing songs
 var currentlyPlayingSong = null; 
 
- window.onload = function() {
+ window.onload = function() {    
      setCurrentAlbum(albumPicasso);
      
-     songListContainer.addEventListener('mouseover', function(event) {
+     songListContainer.addEventListener('mouseover', function(event) { 
          // Only target individual song rows during event delegation
          if (event.target.parentElement.className === 'album-view-song-item') {
              // Change the content from the number to the play button's HTML
@@ -159,13 +159,12 @@ var currentlyPlayingSong = null;
          } 
      });
      
-     for (var i= 0; i < songRows.length; i++) {
-         songRows[i].addEventListener('mouseleave', function(event) { 
-             
+         for (var i= 0; i < songRows.length; i++) {
+         songRows[i].addEventListener('mouseleave', function(event) {  
+                        
              var songItem = getSongItem(event.target);
              var songItemNumber = parseInt(songItem.getAttribute('data-song-number'));
              
-             //#2
              if (songItemNumber !== currentlyPlayingSong) {
                  songItem.innerHTML = songItemNumber; 
              } 
@@ -179,11 +178,11 @@ var currentlyPlayingSong = null;
      var albums = [albumPicasso, albumMarconi, albumHero]; 
      var index = 1; 
      
-     albumImage.addEventListener('click', function(Event) {
+     albumImage.addEventListener('click', function(Event) { 
          setCurrentAlbum(albums[index]);
          index++; 
-            if (index == albums.length){
+            if (index === albums.length){
                 index=0; 
             }
-     });
+     }); 
  };
