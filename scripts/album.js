@@ -87,40 +87,39 @@ var songListContainer = document.getElementsByClassName('album-view-song-list')[
 var songRows = document.getElementsByClassName('album-view-song-item'); 
 
 var playButtonTemplate = '<a class ="album-song-button"><span class="ion-play"></span></a>'; 
-<<<<<<< Updated upstream
+
 var pauseButtonTemplate = '<a class ="album-song-button"><span class="ion-pause"></span></a>'; 
 
 // Store state of playing songs
 var currentlyPlayingSong = null; 
-=======
->>>>>>> Stashed changes
 
- window.onload = function() {
-     setCurrentAlbum(albumPicasso);
-     
-     songListContainer.addEventListener('mouseover', function(event) {
-         // Only target individual song rows during event delegation
-         if (event.target.parentElement.className === 'album-view-song-item') {
-             // Change the content from the number to the play button's HTML
-             event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate; 
-         }
-     });
-     
-     for (var i= 0; i < songRows.length; i++) {
-         songRows[i].addEventListener('mouseleave', function(event) {
-                // Selects first child element, which is the song-item-number element
-             this.children[0].innerHTML = this.children[0].getAttribute('data-song-number');     
+
+window.onload = function () {
+    setCurrentAlbum(albumPicasso);
+
+    songListContainer.addEventListener('mouseover', function (event) {
+        // Only target individual song rows during event delegation
+        if (event.target.parentElement.className === 'album-view-song-item') {
+            // Change the content from the number to the play button's HTML
+            event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
+        }
+    });
+
+    for (var i = 0; i < songRows.length; i++) {
+        songRows[i].addEventListener('mouseleave', function (event) {
+            // Selects first child element, which is the song-item-number element
+            this.children[0].innerHTML = this.children[0].getAttribute('data-song-number');
         });
-     }
-     
-     var albums = [albumPicasso, albumMarconi, albumHero]; 
-     var index = 1; 
-     
-     albumImage.addEventListener('click', function(Event) {
-         setCurrentAlbum(albums[index]);
-         index++; 
-            if (index == albums.length){
-                index=0; 
-            }
-     }); 
-}
+    }
+
+    var albums = [albumPicasso, albumMarconi, albumHero];
+    var index = 1;
+
+    albumImage.addEventListener('click', function (Event) {
+        setCurrentAlbum(albums[index]);
+        index++;
+        if (index === albums.length) {
+            index = 0;
+        }
+    });
+};
