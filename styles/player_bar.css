@@ -1,5 +1,5 @@
 .player-bar {
-    postion: fixed;
+    position: fixed;
     bottom: 0;
     left: 0; 
     right: 0; 
@@ -39,7 +39,7 @@
 }
 
 .player-bar .main-controls .previous {
-    margin-right: 16.5; 
+    margin-right: 16.5%; 
 }
 
 .player-bar .main-controls .play-pause {
@@ -47,7 +47,7 @@
     font-size: 1.6rem; 
 }
 
-.player-bar currently-playing {
+.player-bar .currently-playing {
     width: 50%; 
     text-align: center; 
     position: relative; 
@@ -151,7 +151,7 @@
 
 @media (max-width: 640px) {
     .player-bar{
-        padding:1rem;
+        padding: 1rem;
         background-color: rgba(0,0,0,0.6); 
     }
 
