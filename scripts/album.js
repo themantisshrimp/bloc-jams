@@ -189,14 +189,12 @@ var songRows = document.getElementsByClassName('album-view-song-item');
 var playButtonTemplate = '<a class ="album-song-button"><span class="ion-play"></span></a>'; 
 
 var pauseButtonTemplate = '<a class ="album-song-button"><span class="ion-pause"></span></a>'; 
-=======
+
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>'; 
->>>>>>> checkpoint-13-assignment
+
 
 // Store state of playing songs
 var currentlyPlayingSong = null; 
-
-<<<<<<< HEAD
 
 window.onload = function () {
     setCurrentAlbum(albumPicasso);
@@ -243,7 +241,7 @@ window.onload = function () {
         }
     });
 };
-=======
+
  window.onload = function() {    
      setCurrentAlbum(albumPicasso);
      
